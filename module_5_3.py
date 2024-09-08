@@ -4,12 +4,9 @@ print('----------')
 print()
 
 class House:
-    def __init__(self, name, number_of_floors):
+    def __init__(self, name: str, number_of_floors: int):
         self.name = name
-        if isinstance(number_of_floors, int):
-            self.number_of_floors = number_of_floors
-        else:
-            print('Такого кол-ва этажей не существует')
+        self.number_of_floors = number_of_floors
 
     def go_to(self, new_floor):
         if new_floor > self.number_of_floors or new_floor < 1:
@@ -110,7 +107,7 @@ class House:
             if self.number_of_floors % other != 0:
                 return 'Такого кол-ва этажей не существует'
             else:
-                self.number_of_floors = self.number_of_floors // other
+                self.number_of_floors = self.number_of_floors / other
                 return self
         elif isinstance(other, House):
             self.number_of_floors = self.number_of_floors / other.number_of_floors
